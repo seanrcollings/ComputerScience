@@ -44,18 +44,22 @@ def sim_game_show(switch: bool) -> bool: # I just learned about type hints, and 
 
 def main():
 	print("Here's a cool game with goats")
-	user_input = input("Do you want to switch each round? (y/n) : ")
-	switch = True if user_input == 'y' or user_input == 'yes' else False
-	wins = 0
-	losses = 0
+	while True:
+		user_input = input("Do you want to switch each round? (y/n) : ")
+		switch = True if user_input == 'y' or user_input == 'yes' else False
+		wins = 0
+		losses = 0
 
-	for i in range(0, 100000):
-		if sim_game_show(switch):
-			wins += 1
-		else:
-			losses += 1
+		for i in range(0, 100000):
+			if sim_game_show(switch):
+				wins += 1
+			else:
+				losses += 1
 
-	print("Wins: %s / 100,000" %(wins))
-	print("Losses: %s / 100,000" %(losses))
+		print("Wins: "   + format(wins / 100000, '0.3%'))
+		print("Losses: " + format(losses / 100000, '0.3%'))
 
+		play_again = input("Play again (y/n)? ")
+		if play_again == 'n' or play_again == 'no':
+			break
 main()
