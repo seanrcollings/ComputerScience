@@ -1,0 +1,41 @@
+Requirements Specification
+    Let user enter
+        interest rate
+        loan amount
+        num of years
+    Display
+        monthly payment
+        total of all payments
+System Analysis
+    formulas
+        num of months = num of years * 12
+        monthly payment = loan amount x monthly interest rate
+                          -----------------------------------
+                          1 - 1 / (1 + monthly interest rate)^number of months
+
+        total payments = monthly payment * 12 * num of years
+
+System Design
+    Prompt the user for
+        interest rate (xx.xx%)
+        loan amount
+        num of years
+    Convert interest
+        into a decimal 4.5% = 0.045
+        monthly interest -> annual / 12
+        together: monthly interest = annual interest / 1200
+    compute number of months
+    Compute monthly payment
+    Compute total payment
+    Convert payments to have 2 decimal
+    Display monthly and total payments
+
+Implementation
+
+Testing
+    Test 1
+        rate: 5.75
+        years: 15
+        amount: 250000
+        payment: 2076.02
+        total: 373684.53
