@@ -38,7 +38,7 @@ def sim_game_show(switch: bool) -> bool: # I just learned about type hints, and 
 	revealed_door = [num for num in range(1, 4) if num not in (chosen_door, doors.index('car'))][0] 
 
 	if switch:
-		chosen_door   = [num for num in range(1, 4) if num not in (chosen_door, revealed_door)][0]
+		chosen_door = [num for num in range(1, 4) if num not in (chosen_door, revealed_door)][0]
 	return chosen_door == doors.index('car')
 
 
