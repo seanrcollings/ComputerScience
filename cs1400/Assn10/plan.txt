@@ -16,8 +16,11 @@ System Design
         - set currentY += squareHeight
 
 5 - Testing:
-Output: 
-
-Iterations of nested loop: x (could be below 48,500,000; 24,900,000; 16,000,000)
+Input:
+    StartX = 200
+    StartY = -200
+    width: 500
+    height: 500
+output: should produce a square chessboard in the bottom right quadrant
 passed
 '''
