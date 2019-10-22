@@ -1,0 +1,30 @@
+Requirments specifications
+  - Promt the user for which mode they want to use, along with the values required by said mode. Then use those values to draw the specified item on the turtle screen. Then ask if the user would like to continue, continue and clear, or end and react accordingly
+
+System Analysis 
+  - colors should be randomly generated hexcodes ("#%06x" for formatting)
+  - 
+
+System Design
+  1 Prompt the user for the mode
+  2 Based on the selected mode, prompt the user for the data
+    - Rectangle Design - centerX, centerY, offset, width, height, count, rotation
+    - Circle Pattern - centerX, centerY, offset, radius, count
+    - Super Pattern - num
+  3 Call the appropriate pattern function, which iterates in a range of the count, sets up the direction and location of the turtle and calls the appropriate draw function each time
+  4 draw functions actually draw the shape
+  5 After the pattern completes, promt the user if they want to continue, clear the board and continue, or quit
+
+Testing:
+  - Test 1
+    Input : Rectangle: 100, 100, -50 100, 100, 30, 45   
+    Output : A slightly rotated rectangle patterns with a circle at it's center made of the empty space
+    passed
+  - Test 2
+    Input : Circle: 100, 100, 100, 50, 30 
+    Output : 30 circle with radius of 50 
+    passed
+  - Test 3
+    Input : Super Pattern: 5 
+    Output : 5 random patterns around the scren
+    passed

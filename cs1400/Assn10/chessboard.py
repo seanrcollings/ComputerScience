@@ -5,7 +5,7 @@ tr.speed(0)
 
 def drawChessboard(startX, startY, width=250, height=250):
     startX, startY = eval(startX), eval(startY)
-    move_pen(startX, startY)
+    movePen(startX, startY)
     rectWidth, rectHeight = width // 8, height // 8
     drawRectangle(rectWidth * 8 , rectHeight * 8 ) # draws outline
 
@@ -13,13 +13,13 @@ def drawChessboard(startX, startY, width=250, height=250):
     turtle.done()
 
 def drawAllRectangles(startX, startY, rectWidth, rectHeight):
-    move_pen(startX, startY)
+    movePen(startX, startY)
     currentX, currentY = startX, startY
     for i in range(8):
         if i % 2 == 0: # checks for even rows, which have a white starting square
             currentX += rectWidth
 
-        move_pen(currentX, currentY)
+        movePen(currentX, currentY)
 
         for i in range(4):
             tr.color("black")
@@ -28,7 +28,7 @@ def drawAllRectangles(startX, startY, rectWidth, rectHeight):
             tr.end_fill()
 
             currentX += rectWidth * 2
-            move_pen(currentX, currentY)
+            movePen(currentX, currentY)
 
         currentX = startX
         currentY += rectHeight
@@ -43,7 +43,7 @@ def drawRectangle(width, height):
     tr.left(90)
     tr.forward(height)
 
-def move_pen(x=0, y=0): # moves the pen without drawing lines between points
+def movePen(x=0, y=0): # moves the pen without drawing lines between points
     tr.penup()
     tr.goto(x, y)
     tr.pendown()
