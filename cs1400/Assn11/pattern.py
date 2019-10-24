@@ -27,7 +27,7 @@ def drawRectanglePattern(centerX, centerY, offset, width, height, count, rotatio
 
 def drawRectangle(width, height, rotation):
     tr.color(setRandomColor())
-    tr.left(rotation)
+    tr.left(rotation) # sets to relevant rotation angle
     tr.forward(width)
     tr.left(90)
     tr.forward(height)
@@ -53,8 +53,8 @@ def drawCircle(radius):
     tr.circle(radius)
 
 def drawSuperPattern(num = 1):
-    turtle.tracer(False)
-    funcs = (drawRectanglePattern, drawCirclePattern)
+    # turtle.tracer(False) # Turns off the animation, so it doesn't take so long if you draw a lot of random shapes
+    funcs = (drawRectanglePattern, drawCirclePattern) 
     for i in range(num):
         func = funcs[randint(0, 1)]
         if func == drawCirclePattern:
