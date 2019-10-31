@@ -89,7 +89,6 @@ class UML():
         if len(sys.argv) > 1:
             switches = sys.argv[1]
             if switches[0] == '-':
-                # print('You\'ve entered some switches in your running of this program')
                 if 'h' in switches:
                     self.hor_sep = input('What do you want the horizontal seperator to be? ')
                 if 'v' in switches:
@@ -101,7 +100,7 @@ class UML():
                     except IndexError:
                         print('\033[1;31;40m No provided file path (must be provieded with the "-o" case is present)' )
                         exit()
-            if '--help' in sys.argv or '-h' in sys.argv:
+            if '--help' in sys.argv:
                 print('this is the help info')
 
 

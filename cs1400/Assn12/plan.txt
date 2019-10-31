@@ -1,6 +1,7 @@
 Task 1
 Requirments specifications
-  -  
+  -  Draw the default face, then prompt the user with a menu to change
+  various things. When the user picks something, change the object accordingly, then draw the new face
   
 System Analysis
   - 
@@ -26,19 +27,23 @@ change_eyes() : None        |
 -draw_eyes : None           |
 draw_mouth() : None         |
 ____________________________|
-  1 
+
+1 Create the face object and draw it intially
+2 Prompt the user with a menu to change the smile, emotion, and eye color
+3 Take the user's input and make a change based on it using the setters
+4 Redraw the face with the changes
+5 Re-display the menu until the user quits
 
 Testing:
   - Test 1
-    Input : 
-    Output : 
-  - Test 2
-    Input : 
-    Output : 
+    Input : make it frown, then angry, then smile, then blue eyes
+    Output : frown, frowning and red, smiling and red, smiling, red and blue
+    passed
+
 
 Task 2
 Requirments specifications
-  -  
+  -  Prompt the user for the intial balance, account id and annual interest rate. Presnt a menu to see a variety things about the account. Prompt the user to pick something to see and then display the correct data accordingly
   
 System Analysis
   - monthlyInterest = balance * monthlyInterestRate
@@ -65,12 +70,35 @@ getMonthlyInterest() : float                           |
 withdraw(amount : float) : None                        |
 deposit(amount: float) : None                          |
 _______________________________________________________|
-  1 
+  1 Prompt the user for intial data
+  2 Create the object based on those values
+  3 Run a loop that:
+    - Prints a menu of all the user's options
+    - Wait's for user input 
+    - Checks that input against a if / else if / else block
+    - Display the correct data based on the user's choice
+    - Repeat
 
 Testing:
   - Test 1
-    Input : 
+    Input : id: 12, balance: 1200, 4.5% 
     Output : 
+      1 - 
+      2 - 
+      3 - 
+      4 - 
+      5 - 
+      6 -
+      7 - 
+      8 - 
   - Test 2
     Input : 
     Output : 
+      1 - 
+      2 - 
+      3 - 
+      4 - 
+      5 - 
+      6 -
+      7 - 
+      8 - 
