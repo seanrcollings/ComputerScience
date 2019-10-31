@@ -42,13 +42,13 @@ Requirments specifications
   
 System Analysis
   - monthlyInterest = balance * monthlyInterestRate
-  - monthlyInterestRAte = annualInterestRate / 12
+  - monthlyInterestRate = annualInterestRate / 12
 
 System Design
 _______________________________________________________|
 UNIFIED MODELING LANGUAGE                              |
 _______________________________________________________|
-Account(id : int )                                     |
+Account(id : int, balance : float, annualInterestRate : float)|
 _______________________________________________________|
 -id : int                                              |
 -balance : float                                       |
