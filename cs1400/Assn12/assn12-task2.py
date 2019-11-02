@@ -1,12 +1,16 @@
 from account import Account
 
 def main():
-    account = Account(10, 12.32, 4.2)
+    startingId = eval(input("Enter the account id (eg: 1): "))
+    startingBalance = eval(input("Enter the starting Balance (eg: 1200.35): "))
+    startingInterestRate = eval(input("Enter the yearly interest rate (eg: 4.3): "))
+    account = Account(startingId, startingBalance, startingInterestRate)
 
     while True:
-        print('_______________________')
-        print('ACCOUNTING INFORMATION')
-        print('_______________________')
+        # Account menu
+        print("_______________________")
+        print("ACCOUNTING INFORMATION")
+        print("_______________________")
         print("(1): Display ID")
         print("(2): Display Balance")
         print("(3): Display Annual Interest Rate")
@@ -18,11 +22,11 @@ def main():
         print('_______________________')
 
         menu = eval(input("Enter a selection: "))
-        print("#######################")
+
         if menu == 1: 
             print("ID: {}".format(account.getId()))
         elif menu == 2:
-            print("BALANCE: {}$".format(account.getBalance()))
+            print("BALANCE: ${}".format(account.getBalance()))
         elif menu == 3:
             print("ANNUAL INTEREST RATE: {0:.2f}%"
                 .format(account.getAnnualInterestRate() * 100))
@@ -30,7 +34,7 @@ def main():
             print("MONTHLY INTEREST RATE: {0:.2f}%"
                 .format(account.getMonthlyInterestRate() * 100))
         elif menu == 5:
-            print("MONTHLY INTEREST: {0:.2f}$"
+            print("MONTHLY INTEREST: ${0:.2f}"
                 .format(account.getMonthlyInterest()))
         elif menu == 6:
             print("How much do you want to withdraw?")
