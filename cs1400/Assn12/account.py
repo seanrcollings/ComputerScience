@@ -1,5 +1,5 @@
 class Account(object):
-    def __init__(self, _id, balance, annualtInterestRate):
+    def __init__(self, _id=None, balance=None, annualtInterestRate=1):
         self.__id = _id
         self.__balance = balance
         self.__annualtInterestRate = annualtInterestRate / 100
@@ -21,17 +21,34 @@ class Account(object):
         return self.__balance * self.__monthlyInterestRate
          
     def setId(self, newId):
-        self.__id = newId
+        if newId >= 0:
+            self.__id = newId
+            return True
+        return False
 
     def setBalance(self, newBalance):
-        self.__balance = balance
+        if newBalance >= 0:
+            self.__balance = newBalance
+            return True
+        return False
 
     def setAnnualInterestRate(self, newAnnualInterestRate):
-        self.__annualtInterestRate = newAnnualInterestRate
+        if newAnnualInterestRate <= 10 and newAnnualInterestRate >= 0:
+            self.__annualtInterestRate = newAnnualInterestRate / 100
+            return True
+        return False
 
     def withdraw(self, amount):
-        self.__balance -= amount
+        if amount > 0 and self.__balance - amount >= 0:
+            self.__balance -= amount
+            return True
+        print("You tried to withdraw more money than was in your account, or tried to withdraw a negative amount of money")
+        return False
 
     def deposit(self, amount):
-        self.__balance += amount
+        if amount > 0:
+            self.__balance += amount
+            return True
+        print("You tried to deposit a negative amount of money")
+        return False
 

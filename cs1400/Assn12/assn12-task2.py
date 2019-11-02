@@ -1,10 +1,17 @@
 from account import Account
 
 def main():
-    startingId = eval(input("Enter the account id (eg: 1): "))
-    startingBalance = eval(input("Enter the starting Balance (eg: 1200.35): "))
-    startingInterestRate = eval(input("Enter the yearly interest rate (eg: 4.3): "))
-    account = Account(startingId, startingBalance, startingInterestRate)
+    account = Account()
+    correctInput = False
+    while not correctInput:
+        startingId = eval(input("Enter the account id (eg: 1): "))
+        startingBalance = eval(input("Enter the starting Balance (eg: 1200.35): "))
+        startingInterestRate = eval(input("Enter the yearly interest rate (eg: 4.3 and no greater than 10): "))
+
+        if account.setId(startingId) and account.setBalance(startingBalance) and account.setAnnualInterestRate(startingInterestRate):
+            correctInput = True
+        else:
+            print("Something went wrong with your input, please enter again")
 
     while True:
         # Account menu
