@@ -39,6 +39,9 @@ Testing:
     Input : make it frown, then angry, then smile, then blue eyes
     Output : frown, frowning and red, smiling and red, smiling, red and blue
     passed
+- Test 2
+    Input : make it angry, then have blue eyes, then frown, then smile, then happy
+    output, red face, red face and blue eyes, red face blue eyes and frown, red face blue eyes smile, blue eyes
 
 
 Task 2
@@ -81,24 +84,26 @@ _______________________________________________________|
 
 Testing:
   - Test 1
-    Input : id: 12, balance: 1200, 4.5% 
+    Input : id: 12, balance: 1200, 4.5%'; withdraw 265.2 ; deposit 512.85
     Output : 
-      1 - 
-      2 - 
-      3 - 
-      4 - 
-      5 - 
-      6 -
-      7 - 
-      8 - 
+      1 - 12
+      2 - 1200
+      3 - 4.50%
+      4 - .38%
+      5 - $4.50
+      6 - balance of 934.8
+      7 - balance of 1447.65  
+      8 - exits properly
+      passed
   - Test 2
-    Input : 
+    Input : id :32, balance: 123,456,789, 5.7; widthdraw 90000, deposit 10329303
     Output : 
-      1 - 
-      2 - 
-      3 - 
-      4 - 
-      5 - 
-      6 -
-      7 - 
-      8 - 
+      1 - 32
+      2 - 123, 456, 789
+      3 - 5.7
+      4 - .47%
+      5 - $586419.75
+      6 - balance of 123366789
+      7 - balance of 133696092.0
+      8 - exits properly
+      passed
