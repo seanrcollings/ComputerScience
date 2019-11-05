@@ -1,8 +1,8 @@
 import turtle
 
 class Chessboard:
-    def __init__(self, startX, startY, width=250, height=250):
-        self.__tr = turtle.Turtle()
+    def __init__(self, tr, startX, startY, width=250, height=250):
+        self.__tr = tr
         self.__tr.speed(0)
 
         self.__startX = startX

@@ -21,7 +21,6 @@ class UML():
         self.class_name = class_name
         self.data_members = data_members
         self.methods = methods
-        self.tableWidth = len(max([self.title] + [self.class_name] + self.data_members + self.methods, key=len)) + 3
         self.output_to_file = False
         self.output_file = None
 
@@ -55,6 +54,7 @@ class UML():
 
 
     def renderUML(self) -> str:
+        self.tableWidth = len(max([self.title] + [self.class_name] + self.data_members + self.methods, key=len)) + 3
         uml = UML_STRUCT.format(
             hor_line=self.hor_sep * self.tableWidth + self.ver_sep, 
             title=self.formatLine(self.title),
