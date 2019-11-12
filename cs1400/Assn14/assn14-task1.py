@@ -1,5 +1,6 @@
 from cuboid import Cuboid
 
+
 def main():
     dimensions = input("Please enter cube1's dimensions (ex: length, width, height): ")
     length, width, height = [int(dimension) for dimension in dimensions.split(',')]
@@ -18,4 +19,4 @@ def main():
     print("Cube 1 > Cube 2: " + str(cube1 > cube2))
     print("Cube 1 < Cube 2: " + str(cube1 < cube2))
 
-main()  
+main()
