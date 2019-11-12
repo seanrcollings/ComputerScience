@@ -24,8 +24,11 @@ def main():
             radius = int(input("Please enter a radius (5): "))
             color = input("Please enter a color (red, yellow, blue, and green only): ")
 
-            shapes.append(Circle(x, y, radius, color))
-            print("Circle added!")
+            if isValidColor(color):
+                shapes.append(Circle(x, y, radius, color))
+                print("Circle added!")
+            else:
+                print("Color is not acceptable")
 
         elif menu == '2':
             position = input("Please enter positon (x, y): ")
@@ -34,8 +37,11 @@ def main():
             width, height = [int(num) for num in dimensions.split(',')]
             color = input("Please enter a color (red, yellow, blue, and green only): ")
 
-            shapes.append(Rectangle(x, y, width, height, color))
-            print("Circle Added")
+            if isValidColor(color):
+                shapes.append(Rectangle(x, y, width, height, color))
+                print("Circle Added")
+            else:
+                print("Color is not acceptable ")
 
         elif menu == '3':
             tr.clear()
@@ -50,5 +56,8 @@ def main():
 
         else:
             print("Input not recognized")
+
+def isValidColor(color):
+    return color in ('red', 'yellow', 'blue', 'green')
 
 main()
