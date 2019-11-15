@@ -9,7 +9,8 @@ class Cuboid:
             self.__length, self.__width, self.__height, len(self), self.getVolume())
 
     def __len__(self):
-        return int(2 * self.__length * self.__width + 2 * self.__length * self.__height + 2 * self.__height* self.__width)
+        return int(2 * self.__length * self.__width + 2 * self.__length * \
+            self.__height + 2 * self.__height* self.__width)
 
     def __add__(self, other):
         volume = self.getVolume() + other.getVolume()
@@ -22,7 +23,7 @@ class Cuboid:
         return Cuboid(cubedRoot, cubedRoot, cubedRoot)
 
     def __eq__(self, other):
-        return self.getVolume == other.getVolume()
+        return self.getVolume() == other.getVolume()
 
     def __gt__(self, other):
         return self.getVolume() > other.getVolume()
@@ -31,4 +32,4 @@ class Cuboid:
         return self.getVolume() < other.getVolume()
 
     def getVolume(self):
-        return self.__length * self.__width * self.__heigh
+        return self.__length * self.__width * self.__height

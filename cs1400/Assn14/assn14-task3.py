@@ -44,9 +44,17 @@ def main():
                 print("Color is not acceptable ")
 
         elif menu == '3':
-            tr.clear()
+            if len(shapes) > 0:
+                for index, shape in enumerate(shapes):
+                    print("{}) {}".format(index, shape))
+                remove = int(input("What shape do you want to remove? "))
+                shapes.pop(remove)
+                print("Shape Removed!")
+            else:
+                print("You have not added any shapes")
 
         elif menu == '4':
+            tr.clear()
             for shape in shapes:
                 shape.draw(tr)
 

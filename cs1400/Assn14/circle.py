@@ -6,6 +6,10 @@ class Circle:
         self.__radius = radius
         self.__color = color
 
+    def __str__(self):
+        return "Circle: x: {} | y: {} | radius: {} | color: {} | ".format(
+            self.__x, self.__y, self.__radius, self.__color)
+
     def draw(self, tr):
         tr.penup()
         tr.goto(self.__x, self.__y - self.__radius)

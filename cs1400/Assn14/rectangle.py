@@ -7,6 +7,10 @@ class Rectangle:
         self.__width = width
         self.__color = color
 
+    def __str__(self):
+        return "Rectangle: x: {} | y: {} | height: {} | width: {} | color: {} | ".format(
+            self.__x, self.__y, self.__height, self.__width, self.__color)
+
     def draw(self, tr):
         tr.penup()
         tr.goto(self.__x, self.__y)
