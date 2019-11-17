@@ -66,6 +66,6 @@ def main():
             print("Input not recognized")
 
 def isValidColor(color):
-    return color in ('red', 'yellow', 'blue', 'green')
+    return color in ['red', 'yellow', 'blue', 'green']
 
 main()

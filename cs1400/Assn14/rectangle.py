@@ -1,5 +1,6 @@
-
+'''Contains the rectangle class'''
 class Rectangle:
+    '''Rectangle class, able to draw itself when drawn a turtle object'''
     def __init__(self, x, y, height, width, color):
         self.__x = x
         self.__y = y
