@@ -1,5 +1,3 @@
-# total cards in deck: 120
-# ids should go from 0 - 119
 from random import shuffle
 from card import Card
 
@@ -13,6 +11,11 @@ class Deck:
 
     def draw(self):
     	return self.__cards.pop(0)
+
+    def returnCards(self, *cards):
+        for card in cards:
+            self.__cards.append(card)
+        print("All cards added")
 
 
 

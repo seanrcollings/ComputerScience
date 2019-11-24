@@ -41,10 +41,11 @@ def main():
             bubbleSort(hand)
             searchCard = Card(convertCardToValue(cardValue, cardPaw, cardCoin) )
             print("\nThat card is in the deck\n") if binarySearch(hand, searchCard) else print("\nThat card is not in the deck\n")
-                
+
 
         elif menu == '4':
             print("New hand")
+            deck.returnCards(*hand)
             deck.shuffle()
             hand = [deck.draw() for i in range(30)]
 
@@ -78,7 +79,7 @@ def bubbleSort(inputList):
     while didSwap:
         didSwap = False
         for num in range(len(inputList) - 1):
-            if inputList[num].getID() > inputList[num + 1].getID():
+            if inputList[num] > inputList[num + 1]:
                 inputList[num], inputList[num + 1] = inputList[num + 1], inputList[num]
                 didSwap = True
 
@@ -91,9 +92,9 @@ def binarySearch(inputList, key):
         mid = (bottom + top) // 2
         if inputList[mid] == key:
             return True
-        elif inputList[mid].getID() > key.getID():
+        elif inputList[mid] > key:
             top = mid - 1
-        elif inputList[mid].getID() < key.getID():
+        elif inputList[mid] < key:
             bottom = mid + 1
 
     return False

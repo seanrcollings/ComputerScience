@@ -3,8 +3,8 @@ from gronkyutil import paw, coin
 class Card:
     def __init__(self, _id):
         self.__id = _id
-        self.__value = int(self.setValue())
-        self.__paw = paw[self.__id // 40] 
+        self.__value = self.setValue()
+        self.__paw = paw[self.__id // 40]
         self.__coin = coin[0 if self.__id % 2 == 0 else 1]
 
 
@@ -15,7 +15,13 @@ class Card:
             self.__coin)
 
     def __eq__(self, other):
-        return self.__id == other.getID() 
+        return self.__id == other.getID()
+
+    def __gt__(self, other):
+        return self.__id > other.getID()
+
+    def __lt__(self, other):
+        return self.__id < other.getID()
 
     def getID(self):
         return self.__id
@@ -34,7 +40,6 @@ class Card:
         while value >= 40:
             value -= 40
         if value % 2 == 0:
-            return (value + 2) / 2
+            return int((value + 2) / 2)
         else:
-            return (value + 1) / 2
-
+            return int((value + 1) / 2)

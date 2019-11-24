@@ -29,7 +29,7 @@ def display_values(input_list):
 # While not nessecary, these functions make the above code a bit nicer
 def max_linear_search(input_list):
     '''Finds the max value of an input_list, employes a linear search'''
-    maximum = 0
+    maximum = input_list[0]
     for num in input_list:
         if num > maximum:
             maximum = num
