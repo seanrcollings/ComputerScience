@@ -67,7 +67,7 @@ def insertionSort(inputList):
     for i in range(1, len(inputList)):
         currElement = inputList[i]
         j = i - 1
-        while j >= 0 and inputList[j].getValue() > currElement.getValue():
+        while j >= 0 and inputList[j].getValue() > currElement.getValue(): # overload comapres by id, so have to get the value specifically
             inputList[j + 1] = inputList[j]
             j -= 1
 
@@ -84,19 +84,24 @@ def bubbleSort(inputList):
                 didSwap = True
 
 
-def binarySearch(inputList, key):
-    bottom = 0
-    top = len(inputList) - 1
+def binarySearch(input_list, key):
+    '''
+    Binary search implemented using a recursive algorithm
+    Since we aren't looking for where an item is in a list
+    and just confirming that it's there, I wanted to try
+    and rewrite it using recursion
+    '''
+    mid = (len(input_list) - 1) // 2
 
-    while top >= bottom:
-        mid = (bottom + top) // 2
-        if inputList[mid] == key:
-            return True
-        elif inputList[mid] > key:
-            top = mid - 1
-        elif inputList[mid] < key:
-            bottom = mid + 1
+    # Base case
+    if mid < 0: 
+        return False
 
-    return False
+    elif input_list[mid] == key:
+        return True
+    elif input_list[mid] > key:
+        return binarySearch(input_list[:mid], key)
+    elif input_list[mid] < key:
+        return binarySearch(input_list[mid + 1:], key)
 
 main()

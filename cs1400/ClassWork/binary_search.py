@@ -1,25 +1,30 @@
-from math import ceil
-import pdb
+import random 
 
-def main():
-    input_list = [i for i in range(0, 99)]
-    for i in input_list:
-        value = binarySearch(input_list, i)
-        print(i, value)
+def binarySearchRecur(input_list, key):
+    mid = (len(input_list) - 1) // 2
 
-
-def binarySearch(input_list, key):
-    if len(input_list) >= 1 :
-        mid = ceil((len(input_list) - 1) / 2)
-
-        # pdb.set_trace()
-        if input_list[mid] == key:
-            return True
-        elif input_list[mid] > key:
-            return binarySearch(input_list[:mid - 1], key)
-        elif input_list[mid] < key:
-            return binarySearch(input_list[mid + 1:], key)
-
-    else:
+    if mid < 0:
         return False
-main()
+
+    elif input_list[mid] == key:
+        return True
+    elif input_list[mid] > key:
+        return binarySearchRecur(input_list[:mid], key)
+    elif input_list[mid] < key:
+        return binarySearchRecur(input_list[mid + 1:], key)
+
+
+def binarySearchIter(inputList, key):
+    bottom = 0
+    top = len(inputList) - 1
+
+    while top >= bottom:
+        mid = (bottom + top) // 2
+        if inputList[mid] == key:
+            return True
+        elif inputList[mid] > key:
+            top = mid - 1
+        elif inputList[mid] < key:
+            bottom = mid + 1
+
+    return False
