@@ -1,0 +1,56 @@
+Requirments specifications
+    - Prompt the user with a menu where they can sort by value, sort by id, get a new hand, or quit. Then do what they instrcut accordingly.
+
+
+System Analysis
+  - if id < 40 and even: value = (id + 2) / 2
+  - if odd: value = (id + 1) / 2
+  - 120 card possibilites
+  - 40 cards in each house
+  - IDs 0 - 119
+
+System Design
+  1 Create the deck and do an initial shuffle
+  2 draw the first 30 cards into the hand
+  3 Start a while loop for displaying the menu and accepting input
+    1 Sort by value - employ the insertion sort algorithm to sort all of the cards in the hand based on their value
+    2 Sort by ID - Employ the bubble sort algorithm to sort all of the cards based on their unique ID
+    3 Find Card - First, sort the list, then use a binary search algorithm to find if the specified card is in the list
+    4 New Hand - Add the current hand back to the deck, shuffle the deck and deal out a new set of cards
+    5 Quit - Exit the while loop
+
+######################################################
+UNIFIED MODELING LANGUAGE
+######################################################
+Card(_id: int)
+######################################################
+-id : int
+-value : int
+-paw: str
+-coin : str
+######################################################
+getID() : int
+getPaw() : str
+getValue() : id
+getCoin() : str
+setValue() : int
+######################################################
+
+######################################################
+UNIFIED MODELING LANGUAGE
+######################################################
+Deck()
+######################################################
+-cards : list
+######################################################
+draw() : Card
+shuffle() : None
+######################################################
+
+Testing:
+    1 - Display a list where the values are in desceding order
+    2 - Display a list where the values are in no particular order, but it's been sorted by ids. All rocks, papers, and scissors should be grouped together
+    3; search for a card already known to be in the deck, and one that isn't - card is in the deck or it isn't
+    4 - Should recieve a new hand from the newly sorted deck
+    5 - exit the program cleanly
+    passed

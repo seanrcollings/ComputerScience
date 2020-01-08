@@ -1,0 +1,26 @@
+Requirments specifications
+    Draw a chessboard based on the user's input of the starting location, and the width and height of the board
+
+System Analysis
+    height of each rectangle = height of board / 8
+    width of each rectangle = width of board / 8 
+
+System Design
+    1 - Prompt the user for the starting location, and the width and height
+    2 - Iterate over the number of rows in the board
+        - Iterate over the number of colums in the board
+            - Draw a square, filled in with a specified colors
+            - Set currentX += squareWidth
+            - Swap the color
+        - set currentX = startX 
+        - set currentY += squareHeight
+
+5 - Testing:
+Input:
+    StartX = 200
+    StartY = -200
+    width: 500
+    height: 500
+output: should produce a square chessboard in the bottom right quadrant
+passed
+'''

@@ -1,0 +1,103 @@
+Task 1
+
+Requirments specifications
+  - Prompt the user for the starting position for the chessboard, its width and height. Take that data and then pass it into the chessboard module. Then draw the chessboard to their specifications
+  
+System Analysis
+  - rectWidth = width // 8 (integer divison so the lines are all straight)
+  - rectHeight = height // 8
+
+System Design
+  1 Ask for the intial paramters of the object. 
+  2 Based on those paramters, create an new Chessboard Object
+    1 Assign all those paramters to the object as private data members, also calculate the rectangle height and width with above equations
+  3 Call the draw method on the chessboard object
+  4 Set a currentX and currentY based on the intial positon
+  5 Iterate over a range of 8 (number of sqares in a chessboard)
+    1 Check if we're on an even or odd iteration, and chance position to create the checkered pattern
+    2 Move pen to the current location
+    3 Draw a row of rectangles with the drawRectangle method
+    4 Set the currentX to startX, add a rectangle's height to currentY 
+############################################################################
+UNIFIED MODELING LANGUAGE                                                  #
+############################################################################
+Chessboard(tr: Turtle, startX: int, startY: int, width: int, height:int)   #
+############################################################################
+-tr : Turtle                                                               #
+-startX: int                                                               #
+-startY: int                                                               #
+-width: int                                                                #
+-height: int                                                               #
+-rectWidth: int                                                            #
+rectHeight: int                                                            #
+############################################################################
+draw() : None                                                              #
+-drawAllRectangle() : None                                                 #
+-drawRectangle(width: int, height: int) : None                             #
+-movePen(x:int, y:int) : None                                              #
+############################################################################
+
+
+Testing:
+  - Test 1
+    Input : pos: 100, 100; dimesnions: 500, 500
+    Output : chessboard in top right, twice as big as default
+    passed
+  - Test 2
+    Input : pos: -300, 100; dimensions: 100, 100 
+    Output : chessboard in top left, quite small
+    passed
+
+
+
+Task 2
+
+Requirments specifications
+  -  Prompt the user for a password, check if the password passes the validators. If it does, set it and if it doesn't, don't set it and tell the use what's wrong with the password they selected. Regardless if it set or not, ask them if they want to do it again
+  
+System Analysis
+  - password length: 8
+  - Can't contain "password"
+  - Can't end with 123
+  - Can't have non alphanumeric
+  - Must have 2 or more numbeers
+  - Can't be none / empty
+
+System Design
+1 Create a password object
+2 Ask the user for a password
+3 Try and set the password   
+  1 send the password to isValid
+  2 Iterate through all of the validators
+  3 If at the end there are any errors in the errors data member return false
+4 if it is valid, set the password, otherwise return false
+5 if it gets set, print that it did. If it doesn't print why
+6 ask the user if they want to do it again
+#####################################################
+UNIFIED MODELING LANGUAGE                           #
+#####################################################
+Password(password: string)                          #
+#####################################################
+-password : string                                  #
+-validators : list                                  #
+-errors : list                                      #
+#####################################################
+setPassword(newPassword : string) : boolean         #
+isValid(password : string) : boolean                #
+getErrorMessage() : string                          #
+contains(password: string) : None                   #
+endsWith(password: string) : None                   #
+tooShort(password: string) : None                   #
+containsNonAlpahNumeric(password:string) : None     #
+tooFewDigits(password:string) : None                #
+#####################################################
+
+Testing:
+  - Test 1
+    Input : thispasswordwon'tpass123
+    Output : not set; cannot contain password, cannot contain non alphanumeric characters, cannot end with 123
+    passed
+  - Test 2
+    Input : thisonewillpass63 
+    Output : set: no problms with the password
+    passed

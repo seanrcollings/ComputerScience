@@ -1,0 +1,109 @@
+Task 1
+Requirments specifications
+  -  Draw the default face, then prompt the user with a menu to change
+  various things. When the user picks something, change the object accordingly, then draw the new face
+  
+System Analysis
+  - 
+
+System Design
+____________________________|
+UNIFIED MODELING LANGUAGE   |
+____________________________|
+Face()                      |
+____________________________|
+-smile : boolean            |
+-happy : boolean            |
+-dark_eyes : boolean        |
+____________________________|
+draw_face() : None          |
+is_smile() : boolean        |
+is_happy() : boolean        |
+is_dark_eyes() : boolean    |
+change_mouth() : None       |
+change_emothon() : None     |
+change_eyes() : None        |
+-draw_head() : None         |
+-draw_eyes : None           |
+draw_mouth() : None         |
+____________________________|
+
+1 Create the face object and draw it intially
+2 Prompt the user with a menu to change the smile, emotion, and eye color
+3 Take the user's input and make a change based on it using the setters
+4 Redraw the face with the changes
+5 Re-display the menu until the user quits
+
+Testing:
+  - Test 1
+    Input : make it frown, then angry, then smile, then blue eyes
+    Output : frown, frowning and red, smiling and red, smiling, red and blue
+    passed
+- Test 2
+    Input : make it angry, then have blue eyes, then frown, then smile, then happy
+    output, red face, red face and blue eyes, red face blue eyes and frown, red face blue eyes smile, blue eyes
+
+
+Task 2
+Requirments specifications
+  -  Prompt the user for the intial balance, account id and annual interest rate. Presnt a menu to see a variety things about the account. Prompt the user to pick something to see and then display the correct data accordingly
+  
+System Analysis
+  - monthlyInterest = balance * monthlyInterestRate
+  - monthlyInterestRate = annualInterestRate / 12
+
+System Design
+_______________________________________________________|
+UNIFIED MODELING LANGUAGE                              |
+_______________________________________________________|
+Account(id : int, balance : float, annualInterestRate : float)|
+_______________________________________________________|
+-id : int                                              |
+-balance : float                                       |
+-annualInterestRate : float                            |
+_______________________________________________________|
+setId(id : int) : None                                 |
+setBalance(balance : float) : None                     |
+setAnnualInterestRate(annualInterestRate : float) None |
+getId() : int                                          |
+getBalance() : float                                   |
+getAnnualInterestRate() : float                        |
+getMonthlyInterestRate() : float                       |
+getMonthlyInterest() : float                           |
+withdraw(amount : float) : None                        |
+deposit(amount: float) : None                          |
+_______________________________________________________|
+  1 Prompt the user for intial data
+  2 Create the object based on those values
+  3 Run a loop that:
+    - Prints a menu of all the user's options
+    - Wait's for user input 
+    - Checks that input against a if / else if / else block
+    - Display the correct data based on the user's choice
+    - Repeat
+
+Testing:
+  - Test 1
+    Input : id: 12, balance: 1200, 4.5%'; withdraw 265.2 ; deposit 512.85
+    Output : 
+      1 - 12
+      2 - 1200
+      3 - 4.50%
+      4 - .38%
+      5 - $4.50
+      6 - balance of 934.8
+      7 - balance of 1447.65  
+      8 - exits properly
+      passed
+  - Test 2
+    Input : id :32, balance: 123,456,789, 5.7; widthdraw 90000, deposit 10329303
+    Output : 
+      1 - 32
+      2 - 123, 456, 789
+      3 - 5.7
+      4 - .47%
+      5 - $586419.75
+      6 - balance of 123366789
+      7 - balance of 133696092.0
+      8 - exits properly
+      passed
